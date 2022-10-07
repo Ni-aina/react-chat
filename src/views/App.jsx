@@ -25,7 +25,7 @@ const App = props => {
           <Route path="/chat" element={<Chat authFails={authFails}/>}></Route>
         </Routes>
         <div className={`${authFails && 'd-none'}`}
-        style={{ background: "#222", color: "#ddd", padding: "15px", height: "30px", textAlign: "center" }}>
+          style={{ background: "#222", color: "#ddd", padding: "15px", height: "30px", textAlign: "center" }}>
           &copy; Copyright 2022 by Nï Aina
         </div>    
       </Router>
