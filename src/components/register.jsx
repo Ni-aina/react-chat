@@ -15,7 +15,7 @@ export const Register = ()=> {
   const [emailExist, setEmailExist] = useState(true);
   const navigate = useNavigate();
   const onSubmit = ()=> {
-    Axios.post('http://localhost:3001/api/insert/user', {
+    Axios.post('http://localhost:5000/api/insert/user', {
       name: name,
       email: email,
       password: password

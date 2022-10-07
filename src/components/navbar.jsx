@@ -10,7 +10,7 @@ export const Navbar = props => {
         <div className="nav">
             <Link to="/">
                 <div className="content-start">
-                    <img src={`${process.env.PUBLIC_URL} /Icons/collaboration.png`}
+                    <img src={`${process.env.PUBLIC_URL}/Icons/collaboration.png`}
                     title="discussion" alt="colaboration" width={40} height={40}/>
                     <span style={{ position: 'absolute', margin : "10px" }}>Desktop chat</span>
                 </div>

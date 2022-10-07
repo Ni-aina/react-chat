@@ -19,7 +19,7 @@ export const Login = props => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const onSubmit = ()=> {
-    Axios.post('http://localhost:3001/api/login', {
+    Axios.post('http://localhost:5000/api/login', {
       email: email,
       password: password
     }).then((response)=> {

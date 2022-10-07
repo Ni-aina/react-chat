@@ -18,7 +18,7 @@ export const Chat = ({ authFails })=> {
     const getMessage = (userIdClik, userNameClick) => {
         setIsOnClick(true);
         document.getElementById("user-click").innerHTML = userNameClick;
-        Axios.put(`http://localhost:3001/api/get/messages/${authId}`, {userIdClick: userIdClik}).then(
+        Axios.put(`http://localhost:5000/api/get/messages/${authId}`, {userIdClick: userIdClik}).then(
             (response)=> {
                 setUserIdClick(userIdClik);
                 setUserNameClick(userNameClick);
@@ -34,7 +34,7 @@ export const Chat = ({ authFails })=> {
     }
     const SetMessage = ()=> {
         document.getElementById('input_sms_id').value = "";
-        Axios.put(`http://localhost:3001/api/insert/message/${authId}`, {userIdClick: userIdClick, insertMessage: insertMessage}).then(
+        Axios.put(`http://localhost:5000/api/insert/message/${authId}`, {userIdClick: userIdClick, insertMessage: insertMessage}).then(
                 ()=> {
                 getMessage(userIdClick, userNameClick);
             }
@@ -44,7 +44,7 @@ export const Chat = ({ authFails })=> {
         if (!authFails) {
             navigate('/');
         }
-        Axios.get(`http://localhost:3001/api/get/allUser/${authId}`).then(response => {
+        Axios.get(`http://localhost:5000/api/get/allUser/${authId}`).then(response => {
             if (isSearchUser) {
                 const all = response.data.flat();
                 const name = (document.getElementById('idSearch-user').value).toLowerCase();
@@ -71,7 +71,7 @@ export const Chat = ({ authFails })=> {
                             setIsSearchUser(false);
                     }
                 }/>
-                <img src={`/Images/user.jpg`} alt="user.name" width={150} height={150}
+                <img src={`${process.env.PUBLIC_URL}/Images/user.jpg`} alt="user.name" width={150} height={150}
                 className="img-center"/>
                 <p>Messagerie</p>
                 <ul>
@@ -90,7 +90,7 @@ export const Chat = ({ authFails })=> {
                 </ul>
             </div>
             <div className="right-col">
-                <img src={`Icons/user.png`} alt='' width={30} height={30}/>
+                <img src={`${process.env.PUBLIC_URL}/Icons/user.png`} alt='' width={30} height={30}/>
                 <span>
                     <strong id="user-click"></strong>
                     <input type="search" name="search" id="idSearch-message" placeholder="recherche"

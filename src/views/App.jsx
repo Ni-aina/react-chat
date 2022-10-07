@@ -20,6 +20,7 @@ const App = props => {
         <Navbar authFails={authFails}/>
         <Routes>
           <Route path="/" element={authFails ? <Navigate to="/chat"/> : <Home />}></Route>
+          <Route path="/react-chat" element={authFails ? <Navigate to="/chat"/> : <Home />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/login" element={<Login authFails={authFails}/>}></Route>
           <Route path="/chat" element={<Chat authFails={authFails}/>}></Route>
