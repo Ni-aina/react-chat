@@ -71,7 +71,7 @@ export const Chat = ({ authFails })=> {
                             setIsSearchUser(false);
                     }
                 }/>
-                <img src={`${process.env.PUBLIC_URL}/Images/user.jpg`} alt="user.name" width={150} height={150}
+                <img src={process.env.PUBLIC_URL + `/Images/user.jpg`} alt="user.name" width={150} height={150}
                 className="img-center"/>
                 <p>Messagerie</p>
                 <ul>
@@ -81,7 +81,7 @@ export const Chat = ({ authFails })=> {
                                         getMessage(user.id, user.name);  
                                     }
                                 }>
-                                    <img src={`Icons/user.png`} alt={user.name} width={30} height={30} />
+                                    <img src={process.env.PUBLIC_URL + `/Icons/user.png`} alt={user.name} width={30} height={30} />
                                     <span>{ user.name }</span>
                                 </li>
                             )
@@ -90,7 +90,7 @@ export const Chat = ({ authFails })=> {
                 </ul>
             </div>
             <div className="right-col">
-                <img src={`${process.env.PUBLIC_URL}/Icons/user.png`} alt='' width={30} height={30}/>
+                <img src={process.env.PUBLIC_URL + `/Icons/user.png`} alt='' width={30} height={30}/>
                 <span>
                     <strong id="user-click"></strong>
                     <input type="search" name="search" id="idSearch-message" placeholder="recherche"
