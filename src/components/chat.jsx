@@ -85,7 +85,7 @@ export const Chat = ({ authFails })=> {
                                     <span>{ user.name }</span>
                                 </li>
                             )
-                            )
+                        )
                     }
                 </ul>
             </div>
