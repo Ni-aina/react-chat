@@ -18,7 +18,7 @@ export const Chat = ({ authFails })=> {
     const getMessage = (userIdClik, userNameClick) => {
         setIsOnClick(true);
         document.getElementById("user-click").innerHTML = userNameClick;
-        Axios.put(`http://localhost:5000/api/get/messages/${authId}`, {userIdClick: userIdClik}).then(
+        Axios.put(`https://back-node-chat.herokuapp.com/api/get/messages/${authId}`, {userIdClick: userIdClik}).then(
             (response)=> {
                 setUserIdClick(userIdClik);
                 setUserNameClick(userNameClick);
@@ -34,7 +34,7 @@ export const Chat = ({ authFails })=> {
     }
     const SetMessage = ()=> {
         document.getElementById('input_sms_id').value = "";
-        Axios.put(`http://localhost:5000/api/insert/message/${authId}`, {userIdClick: userIdClick, insertMessage: insertMessage}).then(
+        Axios.put(`https://back-node-chat.herokuapp.com/api/insert/message/${authId}`, {userIdClick: userIdClick, insertMessage: insertMessage}).then(
                 ()=> {
                 getMessage(userIdClick, userNameClick);
             }
@@ -44,7 +44,7 @@ export const Chat = ({ authFails })=> {
         if (!authFails) {
             navigate('/');
         }
-        Axios.get(`http://localhost:5000/api/get/allUser/${authId}`).then(response => {
+        Axios.get(`https://back-node-chat.herokuapp.com/api/get/allUser/${authId}`).then(response => {
             if (isSearchUser) {
                 const all = response.data.flat();
                 const name = (document.getElementById('idSearch-user').value).toLowerCase();
