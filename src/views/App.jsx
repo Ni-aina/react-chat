@@ -10,7 +10,7 @@ import { Chat } from '../components/chat';
 const App = props => {
   const {items, saveToLocalStorage} = props;
   const isAuth = useSelector(state => state.items);
-  const authFails = isAuth[0].isAuth===true? true : false;
+  const authFails = isAuth.length===0? false : isAuth[0].isAuth===true? true : false;
   useEffect(()=>{
     saveToLocalStorage(items);
   }, [saveToLocalStorage, items]);
@@ -19,7 +19,7 @@ const App = props => {
       <Router>
         <Navbar authFails={authFails}/>
         <Routes>
-          <Route path="/" element={authFails ? <Navigate to="/chat"/> : <Home />}></Route>
+          <Route path="/" element={<Home />}></Route>
           <Route path="/react-chat" element={authFails ? <Navigate to="/chat"/> : <Home />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/login" element={<Login authFails={authFails}/>}></Route>
