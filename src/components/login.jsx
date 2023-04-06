@@ -19,7 +19,7 @@ export const Login = props => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const onSubmit = ()=> {
-    Axios.post('http://localhost:5000/api/login', {
+    Axios.post('https://back-chat.onrender.com/api/login', {
       email: email,
       password: password
     }).then((response)=> {
